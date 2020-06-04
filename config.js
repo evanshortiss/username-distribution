@@ -28,6 +28,7 @@ const env = require('env-var').from({
 
 module.exports = {
   redis: {
+    db: env.get('LAB_REDIS_DB').asString(),
     host: env.get('LAB_REDIS_HOST').asString(),
     password: env.get('LAB_REDIS_PASS').asString()
   },
