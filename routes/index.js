@@ -47,9 +47,7 @@ router.post('/', json(), async (req, res) => {
     res.status(401).json({
       accessToken
     })
-  }
-
-  if (!email) {
+  } else if (!email) {
     res.status(400).json({
       message: 'please include an "email" field in the request body'
     })
