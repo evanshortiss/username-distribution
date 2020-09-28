@@ -45,11 +45,11 @@ router.post('/', json(), async (req, res) => {
 
   if (req.body.accessToken !== config.accounts.accessToken) {
     res.status(401).json({
-      accessToken
+      message: 'Invalid access token provided.'
     })
   } else if (!email) {
     res.status(400).json({
-      message: 'please include an "email" field in the request body'
+      message: 'Please include an "email" field in the request body.'
     })
   } else {
     assigmentQ.add(async () => {
